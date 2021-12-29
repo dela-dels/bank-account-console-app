@@ -19,10 +19,22 @@ namespace BankAccountConsole
             // by building a new BankAccount Object
             var account = new BankAccount("John Doe", 10000);
             Console.WriteLine($"Your Account with number {account.Number} was created with an initial balance of {account.Balance}");
+            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine();
+
+            Console.WriteLine($"Debit Transaction on {account.Number}");
             account.Withdrawal(500, DateTime.Now, "Rent payment");
-            Console.WriteLine(account.Balance);
+            Console.WriteLine($"Current Balance: {account.Balance}");
+            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine();
+
+            Console.WriteLine($"Credit Transaction on {account.Number}");
             account.Deposit(100, DateTime.Now, "Friend paid me back");
-            Console.WriteLine(account.Balance);
+            Console.WriteLine($"Current Balance: {account.Balance}");
+            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine();
+
+            Console.WriteLine($"Below is the Transaction History for {account.Number}");
             Console.WriteLine(account.TransactionHistory());
         }
     }

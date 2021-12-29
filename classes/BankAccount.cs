@@ -7,6 +7,7 @@ namespace BankAccountConsole
     {
         private static int accountNumberSeeder = 0100000001;
 
+        //This property is a getter to compute the total balance of a bank account
         public decimal Balance
         {
             get
