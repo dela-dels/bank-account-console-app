@@ -1,0 +1,15 @@
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/bin/Debug/net5.0/BankAccountConsole.deps.json
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/bin/Debug/net5.0/BankAccountConsole.runtimeconfig.json
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/bin/Debug/net5.0/BankAccountConsole.runtimeconfig.dev.json
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/bin/Debug/net5.0/BankAccountConsole.dll
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/bin/Debug/net5.0/ref/BankAccountConsole.dll
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/bin/Debug/net5.0/BankAccountConsole.pdb
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/obj/Debug/net5.0/BankAccountConsole.csproj.AssemblyReference.cache
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/obj/Debug/net5.0/BankAccountConsole.GeneratedMSBuildEditorConfig.editorconfig
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/obj/Debug/net5.0/BankAccountConsole.AssemblyInfoInputs.cache
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/obj/Debug/net5.0/BankAccountConsole.AssemblyInfo.cs
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/obj/Debug/net5.0/BankAccountConsole.csproj.CoreCompileInputs.cache
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/obj/Debug/net5.0/BankAccountConsole.dll
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/obj/Debug/net5.0/ref/BankAccountConsole.dll
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/obj/Debug/net5.0/BankAccountConsole.pdb
+/Users/delaakakpo/Projects/ASP/tutorials/BankAccountConsole/obj/Debug/net5.0/BankAccountConsole.genruntimeconfig.cache
