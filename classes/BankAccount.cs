@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using System.Collections.Generic;
 
@@ -6,6 +7,8 @@ namespace BankAccountConsole
     public class BankAccount
     {
         private static int accountNumberSeeder = 0100000001;
+
+        private readonly decimal minimumBalance;
 
         //This property is a getter to compute the total balance of a bank account
         public decimal Balance
@@ -27,19 +30,30 @@ namespace BankAccountConsole
 
         public string Number { get; }
 
-        public BankAccount(string name, decimal initialDeposit)
+        public BankAccount(string name, decimal initialBalance) : this(name, initialBalance, 0) { }
+
+        public BankAccount(string name, decimal initialDeposit, decimal minimumBalance)
         {
             this.Owner = name;
-            Deposit(initialDeposit, DateTime.Now, "Initial Deposit");
             this.Number = accountNumberSeeder.ToString();
             accountNumberSeeder++;
+            this.minimumBalance = minimumBalance;
+
+            if (initialDeposit > 0)
+            {
+                Deposit(initialDeposit, DateTime.Now, "Initial Balance");
+            }
         }
+
+        //A virtual method is a method where any derived class may choose to reimplement. 
+        //The derived classes use the override keyword to define the new implementation.
+        public virtual void PerformMonthEndTransactions() { }
 
         private List<Transaction> transactions = new List<Transaction>();
 
         public void Deposit(decimal amount, DateTime date, string note)
         {
-            if (amount <= 0)
+            if (amount <= minimumBalance)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
             }
@@ -52,16 +66,29 @@ namespace BankAccountConsole
         {
             if (amount <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(amount), "Withdrawal amount must be positive");
+                throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
             }
-
-            if ((Balance - amount) < 0)
-            {
-                throw new InvalidOperationException("Insufficient funds for this withdrawal");
-            }
-
+            var overdraftTransaction = CheckWithdrawalLimit((Balance - amount) < minimumBalance);
             var withdrawal = new Transaction(-amount, date, note);
             transactions.Add(withdrawal);
+
+            if (overdraftTransaction != null)
+            {
+                transactions.Add(overdraftTransaction);
+            }
+
+        }
+
+        protected virtual Transaction? CheckWithdrawalLimit(bool isOverdrawn)
+        {
+            if (isOverdrawn)
+            {
+                throw new InvalidOperationException("Not sufficient funds for this withdrawal");
+            }
+            else
+            {
+                return default;
+            }
         }
 
         public string TransactionHistory()
